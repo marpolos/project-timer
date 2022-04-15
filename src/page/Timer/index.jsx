@@ -15,9 +15,8 @@ const Timer = () => {
       <TimeNumber>{ minute }</TimeNumber>
       <TimeNumber>{ second }</TimeNumber>
       </ContainerTimer>
-      <InputTimer />
-      <Button disabled={ isDisabled } name={ isActive ? "Pausar" : "Iniciar" }></Button>
-      <Button name="Zerar"></Button>
+      <Button disabled={ isDisabled } name={ isActive ? "Pausar" : "Iniciar" } />
+      <Button name="Zerar" disabled="false"/>
     </PrincipalPage>
   );
 }

@@ -4,10 +4,14 @@ import BtnGeneral from "./styles";
 
 const Button = ({ name, disabled }) => {
     const { handleChangeTimer, handleZero } = useTimer();
+
+    const directClick = () => {
+        
+    }
     return (
         <BtnGeneral
          type="button"
-         onClick={ name !== 'Zerar' ? handleChangeTimer : handleZero }
+         onClick={ name === 'Zerar' ? handleZero : handleChangeTimer }
          disabled={ disabled }
          >
              { name }
