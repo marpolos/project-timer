@@ -1,20 +1,20 @@
 import React from 'react';
 import Button from '../../component/Button';
+import CountTimer from '../../component/CountTimer';
 import InputTimer from '../../component/InputTimer';
 import { useTimer } from '../../hooks/useHours';
 import { ContainerTimer, PrincipalPage } from './styles';
 
 const Timer = () => {
-  const { isActive, isDisabled } = useTimer();
-
+  const { isActive  } = useTimer();
   return (
     <PrincipalPage>
       <h1> Timer </h1>
       <ContainerTimer>
-      <InputTimer />
+      {
+        isActive ?  <CountTimer /> : <InputTimer />
+      }
       </ContainerTimer>
-      <Button disabled={ isDisabled } name={ isActive ? "Pausar" : "Iniciar" } />
-      <Button name="Zerar" disabled="false"/>
     </PrincipalPage>
   );
 }

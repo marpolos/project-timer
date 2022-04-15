@@ -46,7 +46,6 @@ export function TimerProvider({ children }) {
     setIsActive(true);
   };
   const handleStopTimer = () => {
-    setIsActive(false);
     clearInterval(intervalId);
   }
 
@@ -64,6 +63,7 @@ export function TimerProvider({ children }) {
         isDisabled,
         handleInitTimer,
         handleStopTimer,
+        isActive,
       } }
     >
       {children}

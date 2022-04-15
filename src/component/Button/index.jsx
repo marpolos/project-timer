@@ -16,7 +16,7 @@ const Button = ({ name, disabled }) => {
          onClick={ redirectClick }
          disabled={ disabled }
          >
-             { name }
+            { name }
         </BtnGeneral>
     );
 };

@@ -1,10 +1,11 @@
 import React from 'react';
 import { useTimer } from '../../hooks/useHours';
 import { Container, InputNumber } from './styles';
+import Button from '../Button';
 
 const InputTimer = () => {
   const { hour, minute, second,
-    setUserHour, setUserMinute, setUserSecond } = useTimer();
+    setUserHour, setUserMinute, setUserSecond, isDisabled } = useTimer();
   const handleHour = ({name, value}) => {
     switch (name) {
       case 'hour':
@@ -46,6 +47,8 @@ const InputTimer = () => {
             />
           </label>
       </form>
+      <Button disabled={ isDisabled } name="Iniciar" />
+      <Button name="Zerar" disabled={ false } />
     </Container>
   );
 }
