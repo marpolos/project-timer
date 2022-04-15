@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTimer } from '../../hooks/useHours';
-import { Container } from './styles';
+import { Container, InputNumber } from './styles';
 
 const InputTimer = () => {
   const { hour, minute, second,
@@ -24,24 +24,25 @@ const InputTimer = () => {
     <Container>
       <form>
           <label htmlFor="setHour">
-              <input type="number" name="hour" id="hour"
-                onChange={ ({target}) => handleHour(target) }
-                value={ hour }
-                min="0" max="24"
+            <InputNumber 
+              type="number" name="hour" id="hour"
+              onChange={ ({target}) => handleHour(target) }
+              value={ hour }
+              min="0"
           />
           </label>
           <label htmlFor="setMinute">
-              <input type="number" name="minute" id="hour"
+              <InputNumber type="number" name="minute" id="hour"
               onChange={ ({target}) => handleHour(target) }
               value={ minute }
-              min="0" max="60"
+              min="0"
           />
           </label>
           <label htmlFor="setSecond">
-              <input type="number" name="second" id="hour"
+              <InputNumber type="number" name="second" id="hour"
               onChange={ ({target}) => handleHour(target) }
               value={ second }
-              min="0" max="60"
+              min="0"
             />
           </label>
       </form>
