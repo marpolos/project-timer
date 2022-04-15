@@ -12,7 +12,7 @@ export function TimerProvider({ children }) {
   const [isDisabled, setIsDisabled] = useState(true);
   const ONE_TIMER = 1_000;
   const ONE = 1;
-  let intervalIdSecond;
+  let intervalId;
 
   useEffect(() => {
     if (+hour > 0 || +minute > 0 || +second > 0) setIsDisabled(false);
@@ -24,28 +24,30 @@ export function TimerProvider({ children }) {
 
   useEffect(() => {
     if(isActive) {
-        const intervalIdSecond = setInterval(() => {
+        const intervalId = setInterval(() => {
         if (+second >= 0) setSecond((prev) => +prev - ONE);
         else {
           setSecond('00');
-          clearInterval(intervalIdSecond);
+          clearInterval(intervalId);
         }
       }, ONE_TIMER);
     }
-    if(!isActive) clearInterval(intervalIdSecond);
-  }, [second, intervalIdSecond, isActive]);
+    if(!isActive) clearInterval(intervalId);
+  }, [second, intervalId, isActive]);
 
   const handleZero = () => {
       setHour('00');
       setMinute('00');
       setSecond('00');
       setIsActive(false);
+      clearInterval(intervalId);
   };
   const handleInitTimer = () => {
     setIsActive(true);
   };
   const handleStopTimer = () => {
     setIsActive(false);
+    clearInterval(intervalId);
   }
 
   
