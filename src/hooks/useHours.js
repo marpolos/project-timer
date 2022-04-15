@@ -35,20 +35,20 @@ export function TimerProvider({ children }) {
     if(!isActive) clearInterval(intervalIdSecond);
   }, [second, intervalIdSecond, isActive]);
 
-  const handleChangeTimer = () => {
-    setIsActive(!isActive);
-}
-
   const handleZero = () => {
       setHour('00');
       setMinute('00');
       setSecond('00');
       setIsActive(false);
   };
-
-  const calculateTimeLeft = () => {
-
+  const handleInitTimer = () => {
+    setIsActive(true);
   };
+  const handleStopTimer = () => {
+    setIsActive(false);
+  }
+
+  
   return (
     <TimerContext.Provider
       value={ {
@@ -58,10 +58,10 @@ export function TimerProvider({ children }) {
         setUserHour,
         setUserMinute,
         setUserSecond,
-        handleChangeTimer,
         handleZero,
         isDisabled,
-        calculateTimeLeft,
+        handleInitTimer,
+        handleStopTimer,
       } }
     >
       {children}
