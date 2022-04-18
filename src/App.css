@@ -1,3 +1,20 @@
 body {
   background: #020514;
 }
+
+footer {
+  color: rgb(192, 142, 55);
+  text-align: center;
+  font-family: 'SpongeBob Font Wide', sans-serif;
+  position: inherit;
+  font-size: 10px;
+}
+
+h1 {
+  font-family: 'SpongeBob Font Condensed', sans-serif;
+  color: rgb(176, 144, 204);
+  text-align: center;
+  font-size: 95px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

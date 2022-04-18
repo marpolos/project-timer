@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../component/Button';
 import MyTimer from '../Timer';
-import { Container, InputNumber } from './styles';
+import { Container, InputNumber, FormInputs } from './styles';
 
 const TimerInsert = () => {
   const [haveTimer, setHaveTimer] = useState(false);
@@ -29,7 +29,7 @@ const TimerInsert = () => {
         )
         : (
           <>
-        <form>
+        <FormInputs>
           <label htmlFor="setHour">
             <InputNumber 
               type="number" name="hour" id="hour"
@@ -52,7 +52,7 @@ const TimerInsert = () => {
               min="0"
             />
           </label>
-        </form>
+        </FormInputs>
         <Button name="Iniciar" onClick={ handleSetTimer } />
         </>
         )}

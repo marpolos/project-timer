@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ExpireTimer from '../../component/ExpireTimer';
 // import { useTimer } from '../../hooks/useHours';
-import { ContainerTimer, PrincipalPage } from './styles';
+import { ButtonsSection, ContainerTimer, SpanTime, DisplayTimer } from './styles';
 import { useTimer } from 'react-timer-hook';
 import Button from '../../component/Button';
 
@@ -23,19 +23,22 @@ function MyTimer({ expiryTimestamp, resetTimer }) {
         expire
         ? <ExpireTimer />
         : (
-    <div style={{textAlign: 'center'}}>
-      <h1>react-timer-hook </h1>
-      <p>Timer Demo</p>
-      <div style={{fontSize: '100px'}}>
-        <span>{hours < 10
+    <div>
+      <DisplayTimer>
+        <SpanTime>{hours < 10
         ? `0${hours}`
-        : hours}</span>:<span>{minutes < 10
+        : hours}</SpanTime>
+        <SpanTime>:</SpanTime>
+        <SpanTime>{minutes < 10
         ? `0${minutes}`
-        : minutes}</span>:<span>{seconds < 10
+        : minutes}</SpanTime>
+        <SpanTime>:</SpanTime>
+        <SpanTime>{seconds < 10
         ? `0${seconds}`
-        : seconds}</span>
-      </div>
+        : seconds}</SpanTime>
+      </DisplayTimer>
       <p>{isRunning ? 'Contando' : 'Pause'}</p>
+      <ButtonsSection>
       <Button name="Start" onClick={start} />
       <Button name="Pause" onClick={pause} />
       <Button name="Restart" onClick={() => {
@@ -43,6 +46,7 @@ function MyTimer({ expiryTimestamp, resetTimer }) {
         time.setSeconds(time.getSeconds() + +resetTimer);
         restart(time);
       }} />
+      </ButtonsSection>
     </div>
     )
   }
