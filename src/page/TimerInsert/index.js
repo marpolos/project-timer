@@ -1,27 +1,35 @@
 import React, { useState } from 'react';
+import Button from '../../component/Button';
 import MyTimer from '../Timer';
 import { Container, InputNumber } from './styles';
 
 const TimerInsert = () => {
   const [haveTimer, setHaveTimer] = useState(false);
   const [time, setTime] = useState(0);
-  const [hour, setHour] = useState(0);
-  const [minute, setMinute] = useState(0);
-  const [second, setSecond] = useState(0);
+  const [hour, setHour] = useState('00');
+  const [minute, setMinute] = useState('00');
+  const [second, setSecond] = useState('00');
 
   const handleSetTimer = () => {
     const time = new Date();
-    time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
+    const newSeconds = +second + +minute * 60 + +hour * 60 * 60;
+    const finallySecond = time.setSeconds(time.getSeconds() + newSeconds); // 10 minutes timer
+    setTime(finallySecond);
     setHaveTimer(true);
-
   };
     return (
       <Container>
-        {
+      {
         haveTimer
-        ? <MyTimer expiryTimestamp={time} />
-      : (
-      <form>
+        ? (
+          <>
+            <Button name="Novo tempo" onClick={ () => setHaveTimer(false)} />
+            <MyTimer expiryTimestamp={time} resetTimer={+second + +minute * 60 + +hour * 60 * 60} />
+          </>
+        )
+        : (
+          <>
+        <form>
           <label htmlFor="setHour">
             <InputNumber 
               type="number" name="hour" id="hour"
@@ -44,10 +52,12 @@ const TimerInsert = () => {
               min="0"
             />
           </label>
-      </form>
-      )}
+        </form>
+        <Button name="Iniciar" onClick={ handleSetTimer } />
+        </>
+        )}
     </Container>
     );
 }
 
-export default TimerInsert.js;
+export default TimerInsert;
