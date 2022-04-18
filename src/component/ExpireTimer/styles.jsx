@@ -10,6 +10,6 @@ font-family: 'SpongeBob Font Wide', sans-serif;
   }
 `;
 
-export const imageEnd = styled.div`
+export const ImageEnd = styled.div`
 width:480px;
 `;
