@@ -17,6 +17,37 @@ const TimerInsert = () => {
     setTime(finallySecond);
     setHaveTimer(true);
   };
+
+  const addTime = ({ target }) => {
+    switch (target.name) {
+      case 'hour':
+        setHour((prev) => +prev + 1);
+        break;
+      case 'minute':
+        setMinute((prev) => +prev + 1);
+        break;
+      case 'second':
+        setSecond((prev) => +prev + 1);
+        break;
+      default:
+        break;
+    }
+  }
+  const subTime = ({ target: { name }}) => {
+    switch (name) {
+      case 'hour':
+        setHour((prev) => +prev - 1);
+        break;
+      case 'minute':
+        setMinute((prev) => +prev - 1);
+        break;
+      case 'second':
+        setSecond((prev) => +prev - 1);
+        break;
+      default:
+        break;
+    }
+  }
     return (
       <Container>
       {
@@ -36,17 +67,17 @@ const TimerInsert = () => {
               onChange={ ({target}) => setHour(target.value) }
               value={ hour }
               min="0"
-          />
+            />
           </label>
           <label htmlFor="setMinute">
-              <InputNumber type="number" name="minute" id="hour"
+            <InputNumber type="number" name="minute" id="hour"
               onChange={ ({target}) => setMinute(target.value) }
               value={ minute }
               min="0"
-          />
+            />
           </label>
           <label htmlFor="setSecond">
-              <InputNumber type="number" name="second" id="hour"
+            <InputNumber type="number" name="second" id="hour"
               onChange={ ({target}) => setSecond(target.value) }
               value={ second }
               min="0"

@@ -20,4 +20,9 @@ export const FormInputs = styled.form`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
+button {
+    background-color: rgb(176, 144, 204);
+    border: none;
+    height: 50px;
+}
 `;
