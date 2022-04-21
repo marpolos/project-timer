@@ -11,9 +11,9 @@ export function TimerProvider({ children }) {
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const [counter, setCounter] = useState(0);
-  const ONE_SECOND = 1_000;
+  /* const ONE_SECOND = 1_000;
   const ONE = 1;
-  const ZERO = 0;
+  const ZERO = 0; */
   let intervalId;
 
   useEffect(() => {

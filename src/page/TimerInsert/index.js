@@ -18,36 +18,6 @@ const TimerInsert = () => {
     setHaveTimer(true);
   };
 
-  const addTime = ({ target }) => {
-    switch (target.name) {
-      case 'hour':
-        setHour((prev) => +prev + 1);
-        break;
-      case 'minute':
-        setMinute((prev) => +prev + 1);
-        break;
-      case 'second':
-        setSecond((prev) => +prev + 1);
-        break;
-      default:
-        break;
-    }
-  }
-  const subTime = ({ target: { name }}) => {
-    switch (name) {
-      case 'hour':
-        setHour((prev) => +prev - 1);
-        break;
-      case 'minute':
-        setMinute((prev) => +prev - 1);
-        break;
-      case 'second':
-        setSecond((prev) => +prev - 1);
-        break;
-      default:
-        break;
-    }
-  }
     return (
       <Container>
       {

@@ -4,7 +4,7 @@ import ExpireTimer from '../../component/ExpireTimer';
 import { ButtonsSection, ContainerTimer, SpanTime, DisplayTimer } from './styles';
 import { useTimer } from 'react-timer-hook';
 import Button from '../../component/Button';
-// import audio from '../../audio/spongeBob_songs.ogg';
+import audio from '../../audio/spongeBob_songs.ogg';
 
 function MyTimer({ expiryTimestamp, resetTimer }) {
   const [expire, setExpire] = useState(false);
@@ -39,10 +39,10 @@ function MyTimer({ expiryTimestamp, resetTimer }) {
         : seconds}</SpanTime>
       </DisplayTimer>
 
-      {/* <audio controls autoplay="true" loop>
+      <audio controls loop>
       <source src={ audio } type="audio/ogg" />
         Your browser does not support the audio element.
-      </audio> */}
+      </audio>
       
       <p>{isRunning ? 'Contando' : 'Pause'}</p>
       <ButtonsSection>
