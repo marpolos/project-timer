@@ -14,6 +14,9 @@ font-family: 'SpongeBob Font Wide', sans-serif;
 font-size: 20px;
 text-align: center;
 }
+audio::-webkit-media-controls-panel {
+  background-color: rgb(24, 62, 149);
+}
 `;
 
 export const ButtonsSection = styled.section`
