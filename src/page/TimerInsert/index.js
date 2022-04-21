@@ -32,6 +32,7 @@ const TimerInsert = () => {
           <>
         <FormInputs>
           <label htmlFor="setHour">
+            <p>Horas</p>
             <InputNumber 
               type="number" name="hour" id="hour"
               onChange={ ({target}) => setHour(target.value) }
@@ -41,6 +42,7 @@ const TimerInsert = () => {
             />
           </label>
           <label htmlFor="setMinute">
+            <p>Minutos</p>
             <InputNumber type="number" name="minute" id="hour"
               onChange={ ({target}) => setMinute(target.value) }
               value={ minute }
@@ -48,6 +50,7 @@ const TimerInsert = () => {
             />
           </label>
           <label htmlFor="setSecond">
+            <p>Segundos</p>
             <InputNumber type="number" name="second" id="hour"
               onChange={ ({target}) => setSecond(target.value) }
               value={ second }

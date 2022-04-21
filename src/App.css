@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'SpongeBob Font Condensed';
+  font-style: normal;
+  font-weight: 500;
+  src: local('SpongeBob Font Condensed'), url('https://fonts.cdnfonts.com/s/42278/SpongebobFontCondensedRegular-3zZEy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SpongeBob Font Wide';
+  font-style: normal;
+  font-weight: 500;
+  src: local('SpongeBob Font Wide'), url('https://fonts.cdnfonts.com/s/42278/SpongebobFontWideRegular-x3nzV.woff') format('woff');
+}
+
 body {
   background-image: url('./images/tile_background.png');
 }

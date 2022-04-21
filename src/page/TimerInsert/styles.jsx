@@ -14,6 +14,7 @@ border: 1px black solid;
 font-size: 50px;
 font-family: 'SpongeBob Font Wide', sans-serif;
 text-align: center;
+max-width: 500px;
 
 &[type=number]::-webkit-inner-spin-button { 
   all: unset; 
@@ -32,11 +33,22 @@ text-align: center;
  */
 export const FormInputs = styled.form`
 display: flex;
+flex-direction: column;
 flex-wrap: wrap;
 justify-content: space-evenly;
+align-items: flex-end;
 button {
     background-color: rgb(176, 144, 204);
     border: none;
     height: 50px;
+}
+p {
+  color: rgb(176, 144, 204);
+  font-family: 'SpongeBob Font Wide', sans-serif;
+}
+label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 `;

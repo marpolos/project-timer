@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <link href="http://fonts.cdnfonts.com/css/spongebob-font-condensed" rel="stylesheet"></link>
+    {/* <link href="http://fonts.cdnfonts.com/css/spongebob-font-condensed" rel="stylesheet"></link> */}
     <App />
   </React.StrictMode>,
   document.getElementById('root'),
