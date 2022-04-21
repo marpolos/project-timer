@@ -66,6 +66,7 @@ const TimerInsert = () => {
               type="number" name="hour" id="hour"
               onChange={ ({target}) => setHour(target.value) }
               value={ hour }
+              autofocus
               min="0"
             />
           </label>
