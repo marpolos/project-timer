@@ -74,7 +74,6 @@ export function TimerProvider({ children }) {
         handleInitTimer,
         handleStopTimer,
         isActive,
-        count
       } }
     >
       {children}
