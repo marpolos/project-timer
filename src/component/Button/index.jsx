@@ -2,19 +2,11 @@ import React from "react";
 import { useTimer } from "../../hooks/useHours";
 import BtnGeneral from "./styles";
 
-const Button = ({ name, disabled }) => {
-    const { handleInitTimer, handleZero, handleStopTimer } = useTimer();
-
-    const redirectClick = () => {
-        if (name === 'Zerar') handleZero();
-        else if (name === 'Iniciar') handleInitTimer();
-        else handleStopTimer();
-    }
+const Button = ({ name, onClick }) => {
     return (
         <BtnGeneral
-         type="button"
-         onClick={ redirectClick }
-         disabled={ disabled }
+          onClick={ onClick }
+          type="button"
          >
             { name }
         </BtnGeneral>

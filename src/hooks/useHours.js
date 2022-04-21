@@ -10,8 +10,10 @@ export function TimerProvider({ children }) {
   const [second, setSecond] = useState('00');
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
-  const ONE_TIMER = 1_000;
+  const [counter, setCounter] = useState(0);
+  const ONE_SECOND = 1_000;
   const ONE = 1;
+  const ZERO = 0;
   let intervalId;
 
   useEffect(() => {
@@ -23,17 +25,25 @@ export function TimerProvider({ children }) {
   const setUserSecond = (value) => setSecond(value);
 
   useEffect(() => {
-    if(isActive) {
-        const intervalId = setInterval(() => {
-        if (+second >= 0) setSecond((prev) => +prev - ONE);
-        else {
-          setSecond('00');
-          clearInterval(intervalId);
-        }
-      }, ONE_TIMER);
+    let intervalId;
+
+    if (isActive) {
+      intervalId = setInterval(() => {
+        const secondCounter = counter % 60;
+        const minuteCounter = Math.floor(counter / 60);
+
+        const computedSecond = +secondCounter>10 ? `0${secondCounter}`: secondCounter;
+        const computedMinute = String(minuteCounter).length === 1 ? `0${minuteCounter}`: minuteCounter;
+
+        setSecond(computedSecond);
+        setMinute(computedMinute);
+
+        setCounter(counter => counter + 1);
+      }, 1000)
     }
-    if(!isActive) clearInterval(intervalId);
-  }, [second, intervalId, isActive]);
+
+    return () => clearInterval(intervalId);
+  }, [isActive, counter])
 
   const handleZero = () => {
       setHour('00');
@@ -64,6 +74,7 @@ export function TimerProvider({ children }) {
         handleInitTimer,
         handleStopTimer,
         isActive,
+        count
       } }
     >
       {children}
