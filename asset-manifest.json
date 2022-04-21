@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/project-timer/static/css/main.db69519d.css",
-    "main.js": "/project-timer/static/js/main.ffd5c2e9.js",
+    "main.css": "/project-timer/static/css/main.a3d19442.css",
+    "main.js": "/project-timer/static/js/main.8cc9fecc.js",
     "static/js/787.fb576ef0.chunk.js": "/project-timer/static/js/787.fb576ef0.chunk.js",
     "static/media/spongeBob_songs.ogg": "/project-timer/static/media/spongeBob_songs.f18ee84ed81129761fc4.ogg",
     "static/media/square_theme.ogg": "/project-timer/static/media/square_theme.d5b14b0597a1223977a4.ogg",
     "static/media/tile_background.png": "/project-timer/static/media/tile_background.783005153a71c83df064.png",
     "index.html": "/project-timer/index.html",
-    "main.db69519d.css.map": "/project-timer/static/css/main.db69519d.css.map",
-    "main.ffd5c2e9.js.map": "/project-timer/static/js/main.ffd5c2e9.js.map",
+    "main.a3d19442.css.map": "/project-timer/static/css/main.a3d19442.css.map",
+    "main.8cc9fecc.js.map": "/project-timer/static/js/main.8cc9fecc.js.map",
     "787.fb576ef0.chunk.js.map": "/project-timer/static/js/787.fb576ef0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db69519d.css",
-    "static/js/main.ffd5c2e9.js"
+    "static/css/main.a3d19442.css",
+    "static/js/main.8cc9fecc.js"
   ]
 }
