@@ -7,7 +7,7 @@ function App() {
     //<TimerProvider>
     <main>
       <h1>My Timer</h1>
-      <link href="http://fonts.cdnfonts.com/css/spongebob-font-condensed" rel="stylesheet"></link>
+      {/* <link href="http://fonts.cdnfonts.com/css/spongebob-font-condensed" rel="stylesheet"></link> */}
       <TimerInsert />
       <footer>Criado por Marcelle Monteiro</footer>
     </main>
