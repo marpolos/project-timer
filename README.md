@@ -11,4 +11,5 @@ Quando fui personalizar encontrei a imagem do Lula molusco e decidi usar a palet
 ## Em desenvolvimento:
 - Aba para hora local;
 - Aba para contagem regressiva;
-- Routes: tela principal, contagem, hora local e contagem regressiva.
+- Routes: tela principal, contagem, hora local e contagem regressiva;
+- Aba para pomodoro;
